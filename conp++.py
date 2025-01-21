@@ -374,7 +374,7 @@ def NetTest(model, set_loader, is_p_learning = False):
 
 if __name__ == '__main__':
     globalbest = 0.0
-    logger = logging.getLogger('train_logger')  # 创建一个独立的logger
+    logger = logging.getLogger('train_logger') 
     logger.setLevel(logging.INFO)
 
     log_dir = 'logs'
