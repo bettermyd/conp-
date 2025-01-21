@@ -276,14 +276,12 @@ def trian(model, Pnet, set_loader, eps, lr, sch, globalbest,th):
 
 
 
-            # zheng学习
             P_optimizer.zero_grad()
             outputs_P,feat2 = Pnet(image)
             outputs_P22, feat22 = Pnet(image_enhance)
             _, predicted_pos = torch.max(outputs_P.data, 1)
             flip_pos = Flip_criterion(outputs_P,outputs_P22)
 
-            # 自适应K
             probs = F.softmax(outputs_P, dim=1)
             # NO ACN
             # mask = probs > 1 / CLASSNUM
